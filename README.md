@@ -14,7 +14,7 @@ Make sure the image name matches with the image name inside the `docker-compose.
 
 ### App Insights integration
 
-Currently are the binaries from this [Pull Request](https://github.com/openzipkin/zipkin-azure/pull/27)
+Currently I'm including the binaries from this [Pull Request](https://github.com/openzipkin/zipkin-azure/pull/27). This is quick, dirty and momentary solution. When the PR gets approved I'll try to cleanup this. I hate binaries in a repo.
 
 ### Kubernetes
 
