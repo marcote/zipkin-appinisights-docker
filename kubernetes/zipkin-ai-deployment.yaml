@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: zipkin-ai
+  name: zipkin-ai
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: zipkin-ai
+    spec:
+      containers:
+      - env:
+        - name: STORAGE_TYPE
+          value: applicationinsights
+        - name: AI_INSTRUMENTATIONKEY
+          value: foo
+        - name: AI_APPLICATIONID
+          value: bar
+        - name: AI_APIKEY
+          value: baz
+        image: acrlagash.azurecr.io/zipkin-ai:v1
+        name: zipkin-ai
+        ports:
+        - containerPort: 9411
+        resources: {}
+      restartPolicy: Always
+status: {}
