@@ -6,9 +6,9 @@ Docker image of Zipkin with ApplicationInsights storage integration
 
 ### Build the image
 
-1. Build the image with `docker build -t <image-name> .` Example `docker build -t openzipkin/zipkin-ai .` 
-2. Configure the required API Keys in the .env file.
-3. Create container instances with `docker-compose up`
+1. Build the image with `docker build -t <image-name> .` Example `docker build -t zipkin-ai .` 
+2. Configure the required API Keys in the `docker-compose.yml` file. 
+3. Create container instances with `docker-compose up` (currently is using a publish image `marcote/zipkin-ai:v3`
 
 Make sure the image name matches with the image name inside the `docker-compose.yml` file.
 
