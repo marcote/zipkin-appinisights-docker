@@ -20,9 +20,9 @@ spec:
           value: applicationinsights
         - name: AI_INSTRUMENTATION_KEY
           value: <foo>
-        - name: AI_APPLICATIONID
+        - name: AI_APPLICATION_ID
           value: <bar>
-        - name: AI_APIKEY
+        - name: AI_API_KEY
           value: <baz>
         - name: SELF_TRACING_ENABLED
           value: "true"

@@ -18,8 +18,8 @@ services:
     environment:
       - STORAGE_TYPE=applicationinsights
       - AI_INSTRUMENTATION_KEY=<key>
-      - AI_APPLICATIONID=<key>
-      - AI_APIKEY=<key>
+      - AI_APPLICATION_ID=<key>
+      - AI_API_KEY=<key>
       # Uncomment to disable scribe
       # - SCRIBE_ENABLED=false
       # Uncomment to enable self-tracing
