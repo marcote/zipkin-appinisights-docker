@@ -32,10 +32,11 @@ RUN apk add unzip && \
     curl -SL $ZIPKIN_REPO/io/zipkin/java/zipkin-server/$ZIPKIN_VERSION/zipkin-server-$ZIPKIN_VERSION-exec.jar > zipkin-server.jar && \
     unzip zipkin-server.jar && \
     rm zipkin-server.jar && \
-
+    curl -SL $ZIPKIN_REPO/io/zipkin/java/zipkin-autoconfigure-collector-kafka10/$ZIPKIN_VERSION/zipkin-autoconfigure-collector-kafka10-$ZIPKIN_VERSION-module.jar > kafka10.jar && \
+    unzip kafka10.jar -d kafka10 && \
+    rm kafka10.jar && \
     apk del unzip
 
 EXPOSE 9410 9411
 
-CMD  java ${JAVA_OPTS} -cp . org.springframework.boot.loader.PropertiesLauncher
-
+CMD java ${JAVA_OPTS} -cp . org.springframework.boot.loader.PropertiesLauncher

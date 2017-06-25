@@ -12,18 +12,18 @@ services:
   # The zipkin process services the UI, and also exposes a POST endpoint that
   # instrumentation can send trace data to. Scribe is enabled by default.
   zipkin-ai:
-    image: openzipkin/zipkin-ai
+    image: marcote/zipkin-ai:v3
     container_name: zipkin-ai
     # Environment settings are defined here https://github.com/openzipkin/zipkin/tree/1.19.0/zipkin-server#environment-variables
     environment:
       - STORAGE_TYPE=applicationinsights
-      - AI_INSTRUMENTATIONKEY=${AI_INSTRUMENTATIONKEY}
-      - AI_APPLICATIONID=${AI_APPLICATIONID}
-      - AI_APIKEY=${AI_APIKEY}
+      - AI_INSTRUMENTATION_KEY=<key>
+      - AI_APPLICATIONID=<key>
+      - AI_APIKEY=<key>
       # Uncomment to disable scribe
       # - SCRIBE_ENABLED=false
       # Uncomment to enable self-tracing
-      # - SELF_TRACING_ENABLED=true
+      - SELF_TRACING_ENABLED=true
       # Uncomment to enable debug logging
     ports:
       # Port used for the Zipkin UI and HTTP Api

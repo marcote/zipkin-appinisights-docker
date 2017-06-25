@@ -18,13 +18,15 @@ spec:
       - env:
         - name: STORAGE_TYPE
           value: applicationinsights
-        - name: AI_INSTRUMENTATIONKEY
-          value: foo
+        - name: AI_INSTRUMENTATION_KEY
+          value: <foo>
         - name: AI_APPLICATIONID
-          value: bar
+          value: <bar>
         - name: AI_APIKEY
-          value: baz
-        image: openzipkin/zipkin-ai
+          value: <baz>
+        - name: SELF_TRACING_ENABLED
+          value: "true"
+        image: marcote/zipkin-ai:v3
         name: zipkin-ai
         ports:
         - containerPort: 9411
